@@ -1,38 +1,252 @@
-.App {
-  text-align: center;
+/********** farsi font *********/
+@font-face {
+	font-family: Shabnam;
+	src: local("Shabnam.ttf"), url(./fonts/Shabnam.ttf) format("truetype");
+	font-weight: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+	font-family: Shabnam;
+	src: local("Shabnam-Medium.ttf"),
+		url(./fonts/Shabnam-Medium.ttf) format("truetype");
+	font-weight: 500;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+	font-family: Shabnam;
+	src: local("Shabnam-Bold.ttf"),
+		url(./fonts/Shabnam-Bold.ttf) format("truetype");
+	font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@font-face {
+	font-family: Shabnam;
+	src: local("Shabnam-Light.ttf"),
+		url(./fonts/Shabnam-Light.ttf) format("truetype");
+	font-weight: 300;
 }
 
-.App-link {
-  color: #61dafb;
+@font-face {
+	font-family: Shabnam;
+	src: local("Shabnam-Thin.ttf"),
+		url(./fonts/Shabnam-Thin.ttf) format("truetype");
+	font-weight: 100;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/********************* default styles ********************/
+.box-radius {
+	border-radius: 0.5rem;
+}
+.card-color {
+	color: rgba(51, 51, 51, 1);
+}
+
+.card-bg {
+	background-color: rgba(255, 255, 255, 1);
+}
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+body {
+	font-family: Shabnam, Arial, sans-serif;
+	background-color: rgba(240, 241, 242, 1);
+}
+
+/********************** navbar **********************************/
+.top-header-section {
+	font-family: Shabnam;
+}
+.navbar-logo-div {
+	padding: 0;
+	width: 70px;
+	height: 70px;
+}
+
+.navbar-logo-img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.fit-right-nav {
+	margin-right: -40px !important;
+}
+
+.navbar-nav > li > a {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	font-size: 16px;
+	/* margin-left: 40px; */
+	font-weight: 700;
+	color: rgba(152, 152, 152, 1) !important;
+}
+
+.navbar-nav > li > a:hover {
+	color: rgb(194, 194, 194) !important;
+}
+
+.navbar-nav > li > .active {
+	color: rgba(0, 152, 95, 1) !important;
+	border-bottom: 3px solid rgba(0, 152, 95, 1);
+}
+
+.navbar-text-logo {
+	font-size: 24px;
+	font-family: Arial, sans-serif;
+	/* font-weight: bold; */
+	font-weight: 800;
+	color: rgba(0, 152, 95, 1);
+}
+
+/************************ standing page ******************/
+/* has own css file in css folder of project */
+
+/*************************** fixtures page ****************/
+
+.select-fixture {
+	font-family: Shabnam;
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid rgba(245, 245, 245, 1);
+}
+.i-bg {
+	background-color: rgba(245, 245, 245, 1);
+}
+
+.font-16 {
+	font-size: 16px;
+}
+
+.select-icon {
+	font-size: 14px;
+}
+
+.but {
+	height: 40px;
+	width: 80px;
+	color: rgb(92, 92, 92);
+	cursor: pointer;
+}
+
+.but:hover {
+	color: rgb(197, 197, 197);
+}
+
+select {
+	border: none;
+	font-size: 16px;
+}
+
+/* day component */
+.day {
+	background-color: rgba(249, 249, 250, 1);
+	height: 42px;
+	border-radius: 6px;
+	font-size: 14px;
+	font-family: Shabnam;
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	padding-right: 20px;
+	margin-top: 8px;
+}
+
+/* Fixture component styles */
+.fixture-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 70px;
+	border-bottom: 1px solid rgba(245, 245, 245, 1);
+	font-size: 14px;
+	font-weight: 400;
+}
+.left-team,
+.right-team {
+	width: 40%;
+	font-family: Arial, sans-serif;
+}
+.left-team {
+	display: flex;
+	justify-content: end;
+	align-items: center;
+}
+.left-team img {
+	margin-left: 15px;
+}
+.right-team {
+	display: flex;
+	justify-content: start;
+	align-items: center;
+}
+.right-team img {
+	margin-right: 15px;
+}
+.between {
+	width: 10%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-left: 15px;
+	margin-right: 15px;
+	padding-left: 0;
+	padding-right: 0;
+}
+.between-result {
+	font-size: 14px;
+	font-weight: 500;
+}
+.between-status {
+	color: rgb(172, 172, 172);
+	font-size: 11px;
+	font-family: Arial, sans-serif;
+}
+.fixtures-team-logo {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+}
+/********************* toPlayers page *********************/
+/* has own styles in css folder */
+/**************************** footer *************************/
+footer {
+	background-color: rgb(250, 250, 250, 1);
+	margin-top: 3rem;
+	padding: 15vh 10vw;
+	direction: rtl;
+}
+
+.inner-footer > p {
+	width: 95%;
+	border-bottom: 0.5px solid rgba(223, 223, 223, 1);
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.footer-logo {
+	font-family: Arial, sans-serif;
+	font-size: 170%;
+	font-weight: bolder;
+	color: rgba(0, 152, 95, 1);
+	float: left !important;
+	text-decoration: none;
+	display: block;
+}
+
+.footer-text {
+	font-size: 16px;
+	text-align: justify;
+}
+
+.year {
+	font-size: 20px;
+	font-family: Arial, sans-serif;
+	color: rgba(0, 152, 95, 1);
+}
+/********************** NotFound page ********************/
+.not-found-text {
+	color: red;
 }
