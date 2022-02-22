@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 import NavBar from "./components/navbar";
 import Standings from "./components/standings";
@@ -14,11 +14,11 @@ const App = () => {
 			<main className="container pt-5">
 				<NavBar />
 				<Routes>
-					<Route path="/standings" element={<Standings />} />
-					<Route path="/topplayers" element={<TopPlayers />} />
-					<Route path="/fixtures" element={<Fixtures />} />
-					<Route path="/not-found" element={<NotFound />} />
-					<Route path="/" exact element={<Standings />} />
+					<Route path="/premier-league/standings" element={<Standings />} />
+					<Route path="/premier-league/topplayers" element={<TopPlayers />} />
+					<Route path="/premier-league/fixtures" element={<Fixtures />} />
+					<Route path="/premier-league/not-found" element={<NotFound />} />
+					<Route path="/premier-league/" exact element={<Standings />} />
 					<Route path="*" element={<NotFound />} />
 				</Routes>
 			</main>

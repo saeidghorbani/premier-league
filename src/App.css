@@ -77,7 +77,6 @@ body {
 	padding-left: 0 !important;
 	padding-right: 0 !important;
 	font-size: 16px;
-	/* margin-left: 40px; */
 	font-weight: 700;
 	color: rgba(152, 152, 152, 1) !important;
 }
@@ -94,7 +93,6 @@ body {
 .navbar-text-logo {
 	font-size: 24px;
 	font-family: Arial, sans-serif;
-	/* font-weight: bold; */
 	font-weight: 800;
 	color: rgba(0, 152, 95, 1);
 }

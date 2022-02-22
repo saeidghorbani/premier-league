@@ -33,7 +33,7 @@ class TopScores extends Component {
 			content: (p) => (
 				<div className="d-flex flex-row">
 					<div>
-						<img className="player-image" src={p.player.photo} />
+						<img className="player-image" src={p.player.photo} alt="player" />
 					</div>
 					<div>
 						<span className="pe-2">{p.player.name}</span>
@@ -68,7 +68,7 @@ class TopScores extends Component {
 			content: (p) => (
 				<div className="d-flex flex-row">
 					<div>
-						<img className="player-image" src={p.player.photo} />
+						<img className="player-image" src={p.player.photo} alt="player" />
 					</div>
 					<div>
 						<span className="pe-2">{p.player.name}</span>

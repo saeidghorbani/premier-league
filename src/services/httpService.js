@@ -21,6 +21,7 @@ axios.interceptors.response.use(null, (error) => {
 	}
 });
 
-export default {
+const http = {
 	get: axios.get,
 };
+export default http;
