@@ -8,17 +8,17 @@ const NavbarNavigation = () => {
 				<nav className=" navbar navbar-expand">
 					<ul className="fit-right-nav navbar-nav">
 						<li className="ms-3 ms-md-4">
-							<NavLink className="nav-link" to="/">
+							<NavLink className="nav-link" to="/premier-league/">
 								جدول
 							</NavLink>
 						</li>
 						<li className="ms-3 ms-md-4">
-							<NavLink className="nav-link" to="/fixtures">
+							<NavLink className="nav-link" to="/premier-league/fixtures">
 								بازی ها
 							</NavLink>
 						</li>
 						<li className="ms-3 ms-md-4">
-							<NavLink className="nav-link" to="/topplayers">
+							<NavLink className="nav-link" to="/premier-league/topplayers">
 								بازیکنان برتر
 							</NavLink>
 						</li>

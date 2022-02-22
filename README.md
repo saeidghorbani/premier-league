@@ -1,3 +1,8 @@
+# Premier League
+
+این اپلیکیشن برای علاقه مندان به لیگ برتر فوتبال انگلیس ساخته شده و جدول رده بندی، بازیکنان برتر، نتایج گذشته و بازی های آینده را در اختیار قرار می دهد. <br />
+an app for football fans. with this app you can have All matches, results, standings and top Players of ENGLAND football premier league.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
