@@ -23,9 +23,7 @@ class Fixtures extends Component {
 	}
 
 	getCurrentWeekBetweenTwoTime = (startTime, endTime) => {
-		let start = moment(startTime);
-		let end = moment(endTime);
-		const currentWeek = end.diff(start, "week");
+		const currentWeek = endTime.diff(startTime, "week") - 1;
 
 		return currentWeek;
 	};
