@@ -6,8 +6,8 @@ export async function getTopScores() {
 		"https://v3.football.api-sports.io/players/topscorers",
 		{
 			params: {
-				season: 2018,
-				league: 61,
+				season: 2021,
+				league: 39,
 			},
 		},
 	);
