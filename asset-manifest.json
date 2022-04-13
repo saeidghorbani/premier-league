@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/premier-league/standings/static/css/main.035ed91d.css",
-    "main.js": "/premier-league/standings/static/js/main.85db86c9.js",
-    "static/js/787.efeb6be7.chunk.js": "/premier-league/standings/static/js/787.efeb6be7.chunk.js",
-    "static/media/bootstrap-icons.woff?": "/premier-league/standings/static/media/bootstrap-icons.c1d7432ee75fa194e499.woff",
-    "static/media/bootstrap-icons.woff2?": "/premier-league/standings/static/media/bootstrap-icons.a13b815539b49de48d23.woff2",
-    "static/media/Shabnam-Light.ttf": "/premier-league/standings/static/media/Shabnam-Light.0c44b9e684b326e5228e.ttf",
-    "static/media/Shabnam-Bold.ttf": "/premier-league/standings/static/media/Shabnam-Bold.64c7ce83e0d242e12d2e.ttf",
-    "static/media/Shabnam-Thin.ttf": "/premier-league/standings/static/media/Shabnam-Thin.e42c744eeb338a9f0351.ttf",
-    "static/media/Shabnam-Medium.ttf": "/premier-league/standings/static/media/Shabnam-Medium.523f4910c439a1b445a9.ttf",
-    "static/media/Shabnam.ttf": "/premier-league/standings/static/media/Shabnam.c52802faddded689f870.ttf",
-    "index.html": "/premier-league/standings/index.html",
-    "main.035ed91d.css.map": "/premier-league/standings/static/css/main.035ed91d.css.map",
-    "main.85db86c9.js.map": "/premier-league/standings/static/js/main.85db86c9.js.map",
-    "787.efeb6be7.chunk.js.map": "/premier-league/standings/static/js/787.efeb6be7.chunk.js.map"
+    "main.css": "/premier-league/static/css/main.ea0f05d7.css",
+    "main.js": "/premier-league/static/js/main.b07d49a8.js",
+    "static/js/787.efeb6be7.chunk.js": "/premier-league/static/js/787.efeb6be7.chunk.js",
+    "static/media/bootstrap-icons.woff?": "/premier-league/static/media/bootstrap-icons.c1d7432ee75fa194e499.woff",
+    "static/media/bootstrap-icons.woff2?": "/premier-league/static/media/bootstrap-icons.a13b815539b49de48d23.woff2",
+    "static/media/Shabnam-Light.ttf": "/premier-league/static/media/Shabnam-Light.0c44b9e684b326e5228e.ttf",
+    "static/media/Shabnam-Bold.ttf": "/premier-league/static/media/Shabnam-Bold.64c7ce83e0d242e12d2e.ttf",
+    "static/media/Shabnam-Thin.ttf": "/premier-league/static/media/Shabnam-Thin.e42c744eeb338a9f0351.ttf",
+    "static/media/Shabnam-Medium.ttf": "/premier-league/static/media/Shabnam-Medium.523f4910c439a1b445a9.ttf",
+    "static/media/Shabnam.ttf": "/premier-league/static/media/Shabnam.c52802faddded689f870.ttf",
+    "index.html": "/premier-league/index.html",
+    "main.ea0f05d7.css.map": "/premier-league/static/css/main.ea0f05d7.css.map",
+    "main.b07d49a8.js.map": "/premier-league/static/js/main.b07d49a8.js.map",
+    "787.efeb6be7.chunk.js.map": "/premier-league/static/js/787.efeb6be7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.035ed91d.css",
-    "static/js/main.85db86c9.js"
+    "static/css/main.ea0f05d7.css",
+    "static/js/main.b07d49a8.js"
   ]
 }
