@@ -56,7 +56,7 @@ const Standings = () => {
     <div dir="rtl" className="row  global-card m-0 px-3 py-3">
       <div className="col-12 table-responsive">
         {loading && (
-          <div className="vw-50 vh-50">
+          <div className="vw-50 min-vh-100 d-flex justify-content-center align-items-center">
             <Loading />
           </div>
         )}

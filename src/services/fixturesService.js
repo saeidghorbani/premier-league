@@ -7,7 +7,7 @@ export async function getFixtures() {
     {
       params: {
         league: 39,
-        season: 2021,
+        season: 2022,
         from: "2022-08-13",
         to: "2023-05-22",
       },

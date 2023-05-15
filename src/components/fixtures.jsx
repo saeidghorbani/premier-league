@@ -1,98 +1,111 @@
-import React, { Component } from "react";
+import React, { Component, useEffect, useState } from "react";
 import { getFixtures } from "../services/fixturesService";
 import Select from "./select";
 import Round from "./round";
 import moment from "jalali-moment";
 import { digitsEnToFa } from "@persian-tools/persian-tools";
+import Loading from "./common/loading";
 
-class Fixtures extends Component {
-	state = {
-		fixtures: [],
-		selectedRound: 1,
-	};
+const Fixtures = () => {
+  const [fixtures, setFixtures] = useState([]);
+  const [selectedRound, setSelectedRound] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-	async componentDidMount() {
-		const fixtures = await getFixtures();
-		// current Round of season
-		const currentRound = this.getCurrentWeekBetweenTwoTime(
-			moment("2021/08/13"),
-			moment(),
-		);
+  useEffect(() => {
+    getFixturesFn();
+  }, []);
 
-		this.setState({ fixtures, selectedRound: currentRound });
-	}
+  const getFixturesFn = async () => {
+    setLoading(true);
+    try {
+      const fixtures = await getFixtures();
+      // current Round of season
+      const currentRound = getCurrentWeekBetweenTwoTime(
+        moment("2022/10/06"),
+        moment()
+      );
 
-	getCurrentWeekBetweenTwoTime = (startTime, endTime) => {
-		const currentWeek = endTime.diff(startTime, "week") - 1;
+      setFixtures(fixtures);
+      setSelectedRound(currentRound);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-		return currentWeek;
-	};
+  const getCurrentWeekBetweenTwoTime = (startTime, endTime) => {
+    const currentWeek = endTime.diff(startTime, "week") - 1;
 
-	// fixtures of one round
-	roundFixtures = (fixtures, selectedRound) => {
-		const temp = fixtures.filter(
-			(f) => f.league.round === `Regular Season - ${selectedRound}`,
-		);
+    return currentWeek;
+  };
 
-		return temp;
-	};
+  // fixtures of one round
+  const computeRoundFixtures = (fixtures, selectedRound) => {
+    const temp = fixtures.filter((f) => {
+      return f.league.round === `Regular Season - ${selectedRound}`;
+    });
 
-	// extract an array of rounds for pass to Select Component to display
-	roundsOfSeason = (fixtures) => {
-		const temp = fixtures.reduce((result, currentFixture) => {
-			if (!result.includes(currentFixture.league.round)) {
-				result.push(currentFixture.league.round);
-			}
-			return result;
-		}, []);
+    return temp;
+  };
 
-		return temp;
-	};
+  // extract an array of rounds for pass to Select Component to display
+  const computeRoundsOfSeason = (fixtures) => {
+    const temp = fixtures.reduce((result, currentFixture) => {
+      if (!result.includes(currentFixture.league.round)) {
+        result.push(currentFixture.league.round);
+      }
+      return result;
+    }, []);
 
-	// convert name of rounds to my desirable vlues (farsi)
-	mappedRoundsOfSeason = (roundsOfSeason) => {
-		const temp = roundsOfSeason.map((r) =>
-			digitsEnToFa(r.replace("Regular Season - ", "هفته")),
-		);
-		return temp;
-	};
+    return temp;
+  };
 
-	handleRoundSelect = (round) => {
-		const temp = Number(round);
-		this.setState({ selectedRound: temp });
-	};
+  // convert name of rounds to my desirable vlues (farsi)
+  const computeMappedRoundsOfSeason = (roundsOfSeason) => {
+    const temp = roundsOfSeason.map((r) =>
+      digitsEnToFa(r.replace("Regular Season - ", "هفته"))
+    );
+    return temp;
+  };
 
-	handleClickPrevNext = (btn) => {
-		const round = this.state.selectedRound;
-		const newRound = btn === "previous" ? round - 1 : round + 1;
+  const handleRoundSelect = (round) => {
+    const temp = Number(round);
+    setSelectedRound(temp);
+  };
 
-		if (newRound === 0 || newRound === 39) return;
+  const handleClickPrevNext = (btn) => {
+    const round = selectedRound;
+    const newRound = btn === "previous" ? round - 1 : round + 1;
 
-		this.setState({ selectedRound: newRound });
-	};
+    if (newRound === 0 || newRound === 39) return;
 
-	render() {
-		const { fixtures, selectedRound } = this.state;
+    setSelectedRound(newRound);
+  };
 
-		const roundFixtures = this.roundFixtures(fixtures, selectedRound);
-		const roundsOfSeason = this.roundsOfSeason(fixtures);
-		const mappedRoundsOfSeason = this.mappedRoundsOfSeason(roundsOfSeason);
+  const roundFixtures = computeRoundFixtures(fixtures, selectedRound);
+  const roundsOfSeason = computeRoundsOfSeason(fixtures);
+  const mappedRoundsOfSeason = computeMappedRoundsOfSeason(roundsOfSeason);
 
-		return (
-			<div className="row global-card m-0">
-				<div className="col-12">
-					<Select
-						items={mappedRoundsOfSeason}
-						currentItem={this.props.currentRound}
-						selectedItem={selectedRound}
-						onItemSelect={this.handleRoundSelect}
-						onClickPrevNext={this.handleClickPrevNext}
-					/>
-					<Round items={roundFixtures} />
-				</div>
-			</div>
-		);
-	}
-}
+  return (
+    <div className="row global-card m-0">
+      {loading && (
+        <div className="vw-50 m-h-50 d-flex justify-content-center align-items-center">
+          <Loading />
+        </div>
+      )}
+
+      {!loading && (
+        <div className="col-12">
+          <Select
+            items={mappedRoundsOfSeason}
+            selectedItem={selectedRound}
+            onItemSelect={handleRoundSelect}
+            onClickPrevNext={handleClickPrevNext}
+          />
+          <Round items={roundFixtures} />
+        </div>
+      )}
+    </div>
+  );
+};
 
 export default Fixtures;
